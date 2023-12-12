@@ -17,7 +17,7 @@
     <link href="/your-path-to-uicons/css/uicons-rounded-regular.css" rel="stylesheet">
     <link href="/your-path-to-uicons/css/uicons-rounded-bold.css" rel="stylesheet">
     <link href="/your-path-to-uicons/css/uicons-rounded-solid.css" rel="stylesheet">
-
+<script defer src="/p.js"></script>
     <title>tailwindcss</title>
     <script>
         tailwind.config = {
@@ -25,6 +25,9 @@
                 extend: {
                     fontFamily: {
                         'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    screens: {
+                        '2lg': '1200px',
                     },
                 },
             },
@@ -34,12 +37,14 @@
 
 <body class="font-sans">
     <!------------------------------------------------ Header Section---------------------------------------------->
-    <section class="h-[95vh] w-[100%] bg-[#3b5d50] overflow-hidden">
+    <section class="h-full w-[100%] bg-[#3b5d50] md:overflow-x-hidden lg:overflow-hidden lg:h-[95vh]">
         <div class="mr-auto ml-auto w-[85%]">
             <!-----------------------------------------------Nav Part-------------------------------------------------->
             <div class="h-[15vh] py-[1rem] flex justify-between items-center">
-                <a href="#" class="text-[2rem] font-semibold text-white">Furni<span class="text-gray-400">.</span></a>
-                <div class="flex gap-[5rem]">
+                <a href="#" class=" text-[1.5rem] md:text-[2rem] font-semibold text-white">Furni<span
+                        class="text-gray-400">.</span></a>
+                <div class="text-[1.2rem] text-white lg:hidden"><i class="fa-solid fa-bars"></i></div>
+                <div class="hidden gap-[5rem] lg:flex">
                     <ul class="flex gap-[3rem] items-center text-[.9rem] text-gray-400 font-semibold">
                         <li><a href="#" class="group transition duration-300">Home<span
                                     class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#f9bf29]"></span>
@@ -60,41 +65,205 @@
                                     class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-[#f9bf29]"></span></a>
                         </li>
                     </ul>
-                    <div class="flex items-center text-[1rem] text-white gap-[3rem]">
+                    <div class="flex items-center text-[1.1rem] text-white gap-[3rem]">
                         <i class="fas fa-user cursor-pointer"></i>
                         <i class="fa-solid fa-cart-shopping cursor-pointer"></i>
                     </div>
                 </div>
             </div>
             <!------------------------------------------------Hero Section------------------------------------------------->
-            <div class="w-full py-20 flex">
-                <div class="w-[42%]">
-                    <h2 class="text-[2.5rem] font-extrabold w-[90%] text-white leading-[1.2] mb-8">Modern Interior
+            <div class="w-full py-20 flex flex-col lg:flex-row">
+                <div class="lg:w-[42%] text-center lg:text-start">
+                    <h2
+                        class="text-[2rem] md:text-[2.5rem] lg:text-[2rem]  font-extrabold w-full lg:w-[70%] text-white leading-[1.2] mb-8">
+                        Modern Interior
                         Design Studio</h2>
                     <p class="text-[.9rem] text-gray-400 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
                         malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                     </p>
-                    <div class="flex gap-4 ">
+                    <div class="flex gap-4 justify-center lg:justify-start">
                         <button
-                            class="bg-[#f9bf29] text-[1rem] px-[2rem] py-[.8rem] rounded-full font-bold text-[#2f2f2f]">Shop
+                            class="bg-[#f9bf29] text-[.8rem] lg:text-[1rem] px-[1.5rem] py-[.6rem] md:px-[2rem] md:py-[.8rem] rounded-full font-bold text-[#2f2f2f]">Shop
                             Now</button>
                         <button
-                            class="bg-transparent px-[2rem] py-[.8rem] rounded-full font-bold text-white border border-[rgba(255, 255, 255, 0.3)]">Explore</button>
+                            class="bg-transparent text-[.8rem] lg:text-[1rem] px-[1.5rem] py-[.6rem] md:px-[2rem] md:py-[.8rem] rounded-full font-bold text-white border border-[rgba(255, 255, 255, 0.3)]">Explore</button>
                     </div>
                 </div>
-                <div class="w-[58.33333333%] relative">
+                <div class="hidden lg:w-[58.33333333%] relative lg:block w-full">
                     <img src="/images/couch.png"
-                        class="absolute top-[-6rem] max-w-[48.75rem] right-[-8.5rem]  m-4 z-10" />
+                        class="absolute md:top-[1rem] lg:top-[-6rem] xl:max-w-[48.75rem]  lg:right-[-8.5rem]  m-4 z-10  2lg:max-w-[40rem]" />
                     <img src="/images/dots-gray.png"
-                        class="absolute top-[-3rem] max-w-[48.75rem] right-[-6.5rem] overflow-hidden m-4" />
+                        class="absolute md:top-[2rem] lg:top-[-3rem] max-w-[48.75rem] right-[-6.5rem] overflow-hidden m-4" />
                 </div>
 
             </div>
     </section>
-    <section>
-      
+    <!-- ----------------Product Section -->
+    <section class=" h-max lg:h-screen bg-[#eff2f1] pt-[6rem]">
+        <div class="mr-auto ml-auto w-[85%]">
+            <div class="grid gap-16 lg:grid-cols-4 lg:grid-rows-1 lg:gap-1 h-full lg:h-[24rem]">
+                <!-- -----------------Col 1------------------------- -->
+                <div>
+                    <h1
+                        class="text-[1.5rem] md:text-[2rem] w-full md:w-[80%] font-medium leading-[1.2] mb-6 text-[#333]">
+                        Crafted with excellent material.</h1>
+                    <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                        malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
+                        imperdiet dolor tempor tristique.</p>
+                    <button
+                        class="bg-[#353535] text-white text-[.8rem] lg:text-[1rem] px-[1.5rem] py-[.6rem] md:px-[2rem] md:py-[.8rem] rounded-full font-bold ">Explore</button>
+                </div>
+                <!-- -----------------Col 2------------------------- -->
+                <div
+                    class="flex flex-col justify-center items-center relative group transition h-[22rem] lg:h-full w-full">
+                    <span
+                        class="absolute w-full h-[18rem] md:h-0 group-hover:h-[18rem] transition-all duration-500 bg-gray-200 block bottom-0 rounded-[1rem]"></span>
+                    <div class="absolute top-0 h-full">
+                        <img src="/images/product-1.png"
+                            class="w-[12rem] md:w-[16rem] mb-4 group-hover:translate-y-[-2rem] transition-all duration-300" />
+                        <h2 class="text-center font-semibold text-[#333]"> Nordic Chair</h2>
+                        <h3 class="text-center font-bold text-[1.2rem] transition-all duration-500 text-[#333]">$50.00
+                        </h3>
+                    </div>
+                    <div
+                        class="flex md:hidden transition-all duration-500 group-hover:flex absolute left-[50%] translate-x-[-50%]  lg:left-[45%] lg:translate-x-[-45%] bottom-[-.8rem] bg-[#272727] rounded-full w-8 h-8  justify-center items-center">
+                        <i class="fa-solid fa-plus font-bold text-[1.2rem] text-white"></i>
+                    </div>
+                </div>
+                <!-- -----------------Col 3------------------------- -->
+
+                <div
+                    class="flex flex-col justify-center items-center relative group transition h-[22rem] lg:h-full w-full">
+                    <span
+                        class="absolute w-full h-[18rem] md:h-0 group-hover:h-[18rem] transition-all duration-500 bg-gray-200 block bottom-0 rounded-[1rem]"></span>
+                    <div class="absolute top-0 h-full">
+                        <img src="/images/product-2.png"
+                            class="w-[12rem] md:w-[16rem] mb-4 group-hover:translate-y-[-2rem] transition-all duration-300" />
+                        <h2 class="text-center font-semibold text-[#333]"> Nordic Chair</h2>
+                        <h3 class="text-center font-bold text-[1.2rem] transition-all duration-500 text-[#333]">$50.00
+                        </h3>
+                    </div>
+                    <div
+                        class="flex md:hidden transition-all duration-500 group-hover:flex absolute left-[50%] translate-x-[-50%]  lg:left-[45%] lg:translate-x-[-45%] bottom-[-.8rem] bg-[#272727] rounded-full w-8 h-8  justify-center items-center">
+                        <i class="fa-solid fa-plus font-bold text-[1.2rem] text-white"></i>
+                    </div>
+                </div>
+                <!-- -----------------Col 4------------------------- -->
+
+
+                <div
+                    class="flex flex-col justify-center items-center relative group transition h-[22rem] lg:h-full w-full">
+                    <span
+                        class="absolute w-full h-[18rem] md:h-0 group-hover:h-[18rem] transition-all duration-500 bg-gray-200 block bottom-0 rounded-[1rem]"></span>
+                    <div class="absolute top-0 h-full">
+                        <img src="/images/product-3.png"
+                            class="w-[12rem] md:w-[16rem] mb-4 group-hover:translate-y-[-2rem] transition-all duration-300" />
+                        <h2 class="text-center font-semibold text-[#333]"> Nordic Chair</h2>
+                        <h3 class="text-center font-bold text-[1.2rem] transition-all duration-500 text-[#333]">$50.00
+                        </h3>
+                    </div>
+                    <div
+                        class="flex md:hidden transition-all duration-500 group-hover:flex absolute left-[50%] translate-x-[-50%]  lg:left-[45%] lg:translate-x-[-45%] bottom-[-.8rem] bg-[#272727] rounded-full w-8 h-8  justify-center items-center">
+                        <i class="fa-solid fa-plus font-bold text-[1.2rem] text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-   
+    <!-----------------------Why Chosse Us Section------------------------------>
+    <section class="h-max lg:h-full bg-[#eff2f1] pt-[6rem]">
+        <div class="mr-auto ml-auto w-[85%]">
+            <div class="flex flex-col gap-28 lg:flex-row w-full justify-center lg:justify-between">
+                <!-- ----------------------Right side-------------------- -->
+                <div class="w-[100%] lg:w-[50%]">
+                    <h2 class="text-[2rem] font-medium  mb-2 text-[#333]">Why Choose Us
+                    </h2>
+                    <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                        malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
+                    </p>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-2">
+                        <!-- ----------------------col 1-------------------- -->
+                        <div>
+                            <div class="rounded-full bg-slate-300 w-[2.5rem] h-[2.5rem] ml-2 mb-3"><i
+                                    class="fa-solid fa-truck ml-[-9px] text-[1.8rem] text-[#333]"></i></div>
+                            <h2 class="text-[.8rem] md:text-[1rem] font-medium  mb-2 text-[#333]">Fast & Free Shipping
+                            </h2>
+                            <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                                malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                        </div>
+                        <!-- ----------------------col 2-------------------- -->
+
+                        <div>
+                            <div class="rounded-full bg-slate-300 w-[2.5rem] h-[2.5rem] ml-2 mb-3"><i
+                                    class="fa-solid fa-cart-shopping ml-[-9px] text-[1.8rem] text-[#333]"></i></div>
+                            <h2 class="text-[.8rem] md:text-[1rem] font-medium  mb-2">Easy to Shop
+                            </h2>
+                            <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                                malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                        </div>
+                        <!-- ----------------------col 3-------------------- -->
+                        <div>
+                            <div class="rounded-full bg-slate-300 w-[2.5rem] h-[2.5rem] ml-2 mb-3"><i
+                                    class="fa-solid fa-globe ml-[-9px] text-[1.8rem] text-[#333]"></i></div>
+                            <h2 class="text-[.8rem] md:text-[1rem] font-medium  mb-2 text-[#333]">24/7 Support
+                            </h2>
+                            <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                                malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                        </div>
+                        <!-- ----------------------col 4-------------------- -->
+
+                        <div>
+                            <div class="rounded-full bg-slate-300 w-[2.5rem] h-[2.5rem] ml-2 mb-3"><i
+                                    class="fa-solid fa-repeat ml-[-9px] text-[1.8rem] text-[#333]"></i></div>
+                            <h2 class="text-[.8rem] md:text-[1rem] font-medium  mb-2 text-[#333]">Hassle Free Returns
+                            </h2>
+                            <p class="text-[.9rem] text-gray-600 leading-[1.8] mb-8">Donec vitae odio quis nisl dapibus
+                                malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ----------------------Left side-------------------- -->
+
+                <div class="w-[100%] relative lg:w-[40%] h-[35rem]">
+                    <img src="/images/dots-yellow.svg" class="absolute top-[-5.6rem] left-[-6rem] w-[18rem]" />
+                    <img src="/images/why-choose-us-img.jpg"
+                        class="rounded-[2rem] absolute w-full lg:w-[30rem] h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="h-full lg:h-full bg-[#eff2f1] pt-[35rem] lg:pt-[12rem]">
+        <div class="mr-auto ml-auto w-[85%]">
+            <div class="flex flex-col gap-[45rem] lg:gap-0 lg:flex-row w-full justify-center lg:justify-between h-[40rem]">
+                <!-- ----------------------Right side-------------------- -->
+                <div class="w-[100%] lg:w-[55%] h-full relative">
+                    <img src="/images/dots-green.svg" class="absolute left-[-9rem] top-[-5.4rem] w-[18rem]"/>
+                    <div class="grid grid-cols-4 md:grid-cols-6 grid-rows-3 gap-2 md:gap-4 h-[40rem] absolute w-full">
+                        <div class="row-start-1 row-end-4 col-start-1 col-end-3 md:col-end-5 pb-20"><img src="/images/img-grid-1.jpg" class="w-full h-full object-cover rounded-[1rem]"/></div>
+                        <div class="col-start-3 col-end-5 md:col-start-5 md:col-end-7"><img src="/images/img-grid-2.jpg" class="w-full h-full object-cover rounded-[1rem]"/></div>
+                        <div class="row-start-2 row-end-4 col-start-2 col-end-5 md:col-start-4 md:col-end-7"><img src="/images/img-grid-3.jpg" class="w-full h-full object-cover rounded-[1rem]"/></div>
+                    </div>
+                </div>
+                <!-- ----------------------Left side-------------------- -->
+                <div class="w-[100%] lg:w-[40%]">
+                    <h2 class="text-[2rem] font-medium  mb-2 text-[#333]">We Help You Make Modern Interior Design
+                    </h2>
+                    <p class="text-[1rem] text-gray-600 leading-[1.8] mb-8">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada
+                    </p>
+                    <div class="grid grid-cols-2 grid-rows-2 gap-4 mb-8">
+                        <div class="flex gap-2 items-baseline"><div class="border-[2px] border-green-950 rounded-full w-[14px] h-[10px] overflow-hidden"></div><p>Donec vitae odio quis nisl dapibus malesuada</p></div>
+                        <div class="flex gap-2 items-baseline"><div class="border-[2px] border-green-950 rounded-full w-[14px] h-[10px]"></div><p>Donec vitae odio quis nisl dapibus malesuada</p></div>
+                        <div class="flex gap-2 items-baseline"><div class="border-[2px] border-green-950 rounded-full w-[14px] h-[10px]"></div><p>Donec vitae odio quis nisl dapibus malesuada</p></div>
+                        <div class="flex gap-2 items-baseline"><div class="border-[2px] border-green-950 rounded-full w-[14px] h-[10px]"></div><p>Donec vitae odio quis nisl dapibus malesuada</p></div>
+                    </div>
+                    <button
+                    class="bg-[#353535] text-white text-[.8rem] lg:text-[1rem] px-[1.5rem] py-[.6rem] md:px-[2rem] md:py-[.8rem] rounded-full font-bold ">Explore</button>
+                </div>
+            </div>
+    </section>
+    <section class="h-full lg:h-full bg-[#eff2f1] pt-[25rem] lg:pt-[6rem]">
+
 </body>
 
 </html>
